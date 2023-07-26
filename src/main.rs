@@ -140,7 +140,7 @@ fn cast_ray_recursive(scene: &Scene, ray: Ray, d: u32) -> Color {
     match find_closest(scene, ray) {
         Some((t, n, mat)) => {
             let res_p = ray.pos + ray.dir * t;
-            let target = res_p + n + random_vec_in_hemisphere();
+            let target = res_p + n + random_vec_in_hemisphere(n);
             return cast_ray_recursive(
                 scene,
                 Ray {

@@ -206,13 +206,12 @@ pub fn random_vec(min: f32, max: f32) -> Vec3 {
     }
 }
 
-pub fn random_vec_in_hemisphere(normal: Vec3) -> Vec3 {
+pub fn random_vec_in_hemisphere(_normal: Vec3) -> Vec3 {
     loop {
         let v = random_vec(-1.0, 1.0);
         if v.length_squared() >= 1.0 {
             continue;
         }
-        if v.dot(rhs)
         return v.normalize();
     }
 }
